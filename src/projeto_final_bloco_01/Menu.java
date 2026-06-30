@@ -2,12 +2,22 @@ package projeto_final_bloco_01;
 
 import java.util.Scanner;
 
+import projeto_final_bloco_01.controller.ProdutoController;
+import projeto_final_bloco_01.model.Eletronico;
+
 public class Menu {
 
 	public static void main(String[] args) {
 
 		Scanner leia = new Scanner(System.in);
+		ProdutoController produtos = new ProdutoController();
+
 		int opcao;
+		int id;
+		String nome;
+		double preco;
+		int quantidade;
+		String marca;
 
 		do {
 
@@ -28,27 +38,70 @@ public class Menu {
 			switch (opcao) {
 
 			case 1:
-				System.out.println("\nListar todos os produtos.");
+				produtos.listarTodos();
 				keyPress();
 				break;
 
 			case 2:
-				System.out.println("\nBuscar produto por ID.");
+				System.out.print("Digite o ID do produto: ");
+				id = leia.nextInt();
+
+				produtos.buscarPorId(id);
 				keyPress();
 				break;
 
 			case 3:
-				System.out.println("\nCadastrar produto.");
+				System.out.print("ID: ");
+				id = leia.nextInt();
+				leia.nextLine();
+
+				System.out.print("Nome: ");
+				nome = leia.nextLine();
+
+				System.out.print("Preço: ");
+				preco = leia.nextDouble();
+
+				System.out.print("Quantidade: ");
+				quantidade = leia.nextInt();
+				leia.nextLine();
+
+				System.out.print("Marca: ");
+				marca = leia.nextLine();
+
+				produtos.cadastrar(new Eletronico(id, nome, preco, quantidade, marca));
+
 				keyPress();
 				break;
 
 			case 4:
-				System.out.println("\nAtualizar produto.");
+				System.out.print("ID: ");
+				id = leia.nextInt();
+				leia.nextLine();
+
+				System.out.print("Novo Nome: ");
+				nome = leia.nextLine();
+
+				System.out.print("Novo Preço: ");
+				preco = leia.nextDouble();
+
+				System.out.print("Nova Quantidade: ");
+				quantidade = leia.nextInt();
+				leia.nextLine();
+
+				System.out.print("Marca: ");
+				marca = leia.nextLine();
+
+				produtos.atualizar(new Eletronico(id, nome, preco, quantidade, marca));
+
 				keyPress();
 				break;
 
 			case 5:
-				System.out.println("\nDeletar produto.");
+				System.out.print("Digite o ID do produto: ");
+				id = leia.nextInt();
+
+				produtos.deletar(id);
+
 				keyPress();
 				break;
 
