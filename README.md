@@ -161,11 +161,3 @@ src/
 GitHub: https://github.com/phcarneiro9
 
 ---
-
-<div align="center">
-
-⭐ Se este projeto foi útil para você, deixe uma estrela no repositório!
-
-</div>
-
-GitHub: **https://github.com/phcarneiro9**
