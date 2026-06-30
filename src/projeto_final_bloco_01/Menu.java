@@ -9,6 +9,11 @@ public class Menu {
 
 	public static void main(String[] args) {
 
+		final String AZUL = "\u001B[34m";
+		final String VERDE = "\u001B[32m";
+		final String VERMELHO = "\u001B[31m";
+		final String RESET = "\u001B[0m";
+
 		Scanner leia = new Scanner(System.in);
 		ProdutoController produtos = new ProdutoController();
 
@@ -21,28 +26,32 @@ public class Menu {
 
 		do {
 
-			System.out.println("\n======================================");
-			System.out.println("      SISTEMA DE PRODUTOS");
-			System.out.println("======================================");
-			System.out.println("1 - Listar todos os Produtos");
-			System.out.println("2 - Buscar Produto por ID");
-			System.out.println("3 - Cadastrar Produto");
-			System.out.println("4 - Atualizar Produto");
-			System.out.println("5 - Deletar Produto");
-			System.out.println("6 - Sobre");
-			System.out.println("0 - Sair");
-			System.out.println("======================================");
-			System.out.print("Escolha uma opção: ");
+			System.out.println(AZUL + "\n=================================================" + RESET);
+			System.out.println(AZUL + "              SISTEMA DE PRODUTOS" + RESET);
+			System.out.println(AZUL + "=================================================" + RESET);
+			System.out.println(AZUL + "1 - Listar todos os Produtos" + RESET);
+			System.out.println(AZUL + "2 - Buscar Produto por ID" + RESET);
+			System.out.println(AZUL + "3 - Cadastrar Produto" + RESET);
+			System.out.println(AZUL + "4 - Atualizar Produto" + RESET);
+			System.out.println(AZUL + "5 - Deletar Produto" + RESET);
+			System.out.println(AZUL + "6 - Sobre" + RESET);
+			System.out.println(AZUL + "7 - Valor total do estoque" + RESET);
+			System.out.println(AZUL + "0 - Sair" + RESET);
+			System.out.println(AZUL + "=================================================" + RESET);
+			System.out.print(AZUL + "Escolha uma opção: " + RESET);
+
 			opcao = leia.nextInt();
 
 			switch (opcao) {
 
 			case 1:
+
 				produtos.listarTodos();
 				keyPress();
 				break;
 
 			case 2:
+
 				System.out.print("Digite o ID do produto: ");
 				id = leia.nextInt();
 
@@ -51,8 +60,11 @@ public class Menu {
 				break;
 
 			case 3:
-				System.out.print("ID: ");
-				id = leia.nextInt();
+
+				id = produtos.gerarId();
+
+				System.out.println(VERDE + "\n✅ ID gerado automaticamente: " + id + RESET);
+
 				leia.nextLine();
 
 				System.out.print("Nome: ");
@@ -74,17 +86,18 @@ public class Menu {
 				break;
 
 			case 4:
-				System.out.print("ID: ");
+
+				System.out.print("Digite o ID do produto: ");
 				id = leia.nextInt();
 				leia.nextLine();
 
-				System.out.print("Novo Nome: ");
+				System.out.print("Novo nome: ");
 				nome = leia.nextLine();
 
-				System.out.print("Novo Preço: ");
+				System.out.print("Novo preço: ");
 				preco = leia.nextDouble();
 
-				System.out.print("Nova Quantidade: ");
+				System.out.print("Nova quantidade: ");
 				quantidade = leia.nextInt();
 				leia.nextLine();
 
@@ -97,6 +110,7 @@ public class Menu {
 				break;
 
 			case 5:
+
 				System.out.print("Digite o ID do produto: ");
 				id = leia.nextInt();
 
@@ -106,16 +120,27 @@ public class Menu {
 				break;
 
 			case 6:
+
 				sobre();
+
+				keyPress();
+				break;
+
+			case 7:
+
+				produtos.valorTotalEstoque();
+
 				keyPress();
 				break;
 
 			case 0:
-				System.out.println("\nSistema encerrado!");
+
+				System.out.println(VERMELHO + "\nSistema encerrado!" + RESET);
 				break;
 
 			default:
-				System.out.println("\nOpção inválida!");
+
+				System.out.println(VERMELHO + "\n❌ Opção inválida!" + RESET);
 				keyPress();
 
 			}
@@ -128,11 +153,16 @@ public class Menu {
 
 	public static void sobre() {
 
-		System.out.println("\n======================================");
-		System.out.println("Projeto Final - Bloco 01");
-		System.out.println("Desenvolvido por Patrick Carneiro");
-		System.out.println("Sistema de Gerenciamento de Produtos");
-		System.out.println("======================================");
+		final String AZUL = "\u001B[34m";
+		final String RESET = "\u001B[0m";
+
+		System.out.println(AZUL + "\n=================================================" + RESET);
+		System.out.println(AZUL + "             PROJETO FINAL - BLOCO 01" + RESET);
+		System.out.println(AZUL + "=================================================" + RESET);
+		System.out.println(AZUL + "Desenvolvido por Patrick Carneiro" + RESET);
+		System.out.println(AZUL + "GitHub: https://github.com/phcarneiro9" + RESET);
+		System.out.println(AZUL + "Sistema de Gerenciamento de Produtos" + RESET);
+		System.out.println(AZUL + "=================================================" + RESET);
 
 	}
 
@@ -145,7 +175,7 @@ public class Menu {
 
 		} catch (Exception e) {
 
-			System.out.println("Erro ao continuar.");
+			System.out.println("\u001B[31mErro ao continuar.\u001B[0m");
 
 		}
 
