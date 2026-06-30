@@ -1,9 +1,8 @@
-# Projeto Sistema de Gerenciamento de Produtos - Java
+# 🛒 Projeto Sistema de Gerenciamento de Produtos - Java
 
-<br />
+<br>
 
 <div align="center">
-
 
 <img src="https://img.shields.io/github/languages/top/phcarneiro9/projeto_final_bloco_01?style=flat-square" />
 <img src="https://img.shields.io/github/repo-size/phcarneiro9/projeto_final_bloco_01?style=flat-square" />
@@ -17,45 +16,38 @@
 
 ---
 
-<br />
+## 📖 1. Descrição
 
-## 1. Descrição
+O **Sistema de Gerenciamento de Produtos** é uma aplicação desenvolvida em **Java** como projeto final do **Bloco 01**, permitindo o gerenciamento de produtos através de um menu interativo executado no terminal.
 
-<br />
+O sistema oferece funcionalidades para cadastro, consulta, atualização e exclusão de produtos, além da geração automática de ID e do cálculo do valor total do estoque.
 
-O **Sistema de Gerenciamento de Produtos** é uma aplicação desenvolvida em **Java** para o **Projeto Final do Bloco 01**, permitindo realizar o gerenciamento de produtos através de um menu interativo no terminal.
+Durante o desenvolvimento foram aplicados os principais conceitos da **Programação Orientada a Objetos (POO)**:
 
-O sistema oferece operações de **cadastro**, **consulta**, **atualização** e **remoção** de produtos, além da geração automática de ID e do cálculo do valor total do estoque.
+- Classes e Objetos
+- Encapsulamento
+- Herança
+- Polimorfismo
+- Classes Abstratas
+- Interfaces
+- Collections
 
-O projeto foi desenvolvido com foco na aplicação dos principais conceitos da **Programação Orientada a Objetos (POO)**, como:
+---
 
-- Classes e Objetos;
-- Encapsulamento;
-- Herança;
-- Polimorfismo;
-- Classes Abstratas;
-- Interfaces;
-- Collections.
+## 🚀 2. Funcionalidades
 
-<br />
+- ✅ Cadastrar produtos
+- ✅ Listar todos os produtos
+- ✅ Buscar produto por ID
+- ✅ Atualizar produtos
+- ✅ Excluir produtos
+- ✅ Calcular o valor total do estoque
+- ✅ Geração automática de ID
+- ✅ Interface colorida utilizando ANSI Colors
 
-## 2. Funcionalidades do Projeto
+---
 
-<br />
-
-1. **Cadastrar Produto:** Cadastro com geração automática de ID.
-2. **Listar Produtos:** Exibe todos os produtos cadastrados.
-3. **Buscar Produto por ID:** Consulta um produto pelo identificador.
-4. **Atualizar Produto:** Atualiza as informações de um produto.
-5. **Excluir Produto:** Remove um produto do sistema.
-6. **Valor Total do Estoque:** Calcula automaticamente o valor total do estoque.
-7. **Interface Colorida:** Mensagens de sucesso, erro e informações utilizando ANSI Colors.
-
-<br />
-
-## 3. Diagrama de Classes
-
-<br />
+## 📊 3. Diagrama de Classes
 
 ```mermaid
 classDiagram
@@ -94,14 +86,14 @@ ProdutoController ..|> ProdutoRepository
 ProdutoController --> Produto
 ```
 
-<br />
+---
 
-## 4. Tela Inicial do Sistema
+## 💻 4. Tela Inicial
 
-\```text
+```text
 =================================================
 
-              SISTEMA DE PRODUTOS
+          SISTEMA DE PRODUTOS
 
 =================================================
 
@@ -111,48 +103,69 @@ ProdutoController --> Produto
 4 - Atualizar Produto
 5 - Deletar Produto
 6 - Sobre
-7 - Valor total do estoque
+7 - Valor Total do Estoque
 0 - Sair
 
 =================================================
 Escolha uma opção:
-\```
+```
 
-Através desse menu é possível acessar todas as operações do sistema de forma simples e intuitiva, permitindo o gerenciamento completo dos produtos cadastrados.
+O menu permite acessar todas as funcionalidades do sistema de forma simples e organizada.
 
-## 5. Requisitos
+---
 
-<br />
+## 🛠️ 5. Tecnologias Utilizadas
 
-- Java JDK 17+
-- Eclipse IDE ou Spring Tool Suite (STS)
+- Java 17
+- Eclipse IDE
 - Git
+- GitHub
 
-<br />
+---
 
-## 6. Como Executar o Projeto
+## ▶️ 6. Como Executar
 
-<br />
-
-### Clonando o repositório
+### Clone o repositório
 
 ```bash
 git clone https://github.com/phcarneiro9/projeto_final_bloco_01.git
 ```
 
-### Executando
+### Execute o projeto
 
 1. Importe o projeto no Eclipse.
-2. Abra a classe **Menu.java**.
+2. Abra a classe `Menu.java`.
 3. Execute como **Java Application**.
-4. O menu será exibido no console.
+4. Utilize o menu no terminal.
 
-<br />
+---
 
-## 7. Autor
+## 📁 Estrutura do Projeto
 
-<br />
+```text
+src/
+└── projeto_final_bloco_01
+    ├── controller
+    ├── model
+    ├── repository
+    ├── util
+    └── Menu.java
+```
 
-Desenvolvido por **Patrick Carneiro**
+---
+
+## 👨‍💻 Autor
+
+**Patrick Carneiro**
+
+GitHub: https://github.com/phcarneiro9
+
+---
+
+<div align="center">
+
+⭐ Se este projeto foi útil para você, deixe uma estrela no repositório!
+
+</div>
 
 GitHub: **https://github.com/phcarneiro9**
